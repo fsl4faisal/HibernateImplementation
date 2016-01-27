@@ -19,7 +19,16 @@ public class Repository<E> {
 
 	public E save(E entity) {
 		em.getTransaction().begin();
-		entity = em.merge(entity);
+		//entity = em.merge(entity);
+		em.getTransaction().commit();
+		em.detach(entity);
+
+		return entity;
+	}
+	
+	public E create(E entity) {
+		em.getTransaction().begin();
+		em.persist(entity);
 		em.getTransaction().commit();
 		return entity;
 	}

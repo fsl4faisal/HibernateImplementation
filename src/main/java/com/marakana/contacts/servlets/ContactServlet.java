@@ -64,7 +64,7 @@ public class ContactServlet extends HttpServlet {
 					request.getParameter("state"), request.getParameter("zip"));
 			Contact contact = new Contact(request.getParameter("name"), address);
 
-			contact = contactRepository.save(contact);
+			contact = contactRepository.create(contact);
 
 			// redirect to contact view page
 			response.sendRedirect("contact?id=" + contact.getId());
