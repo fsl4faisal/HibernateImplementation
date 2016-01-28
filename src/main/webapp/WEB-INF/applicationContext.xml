@@ -15,9 +15,8 @@
 
 	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
 		destroy-method="close">
-
-		<property name="datasourcebean">
-			<bean class="org/hsqldb.jdbc.JDBCDataSource">
+		<property name="datasourceBean">
+			<bean class="org.hsqldb.jdbc.JDBCDataSource">
 				<property name="url" value="jdbc:hsqldb:file:target/data/trainingdb" />
 			</bean>
 		</property>
@@ -26,7 +25,7 @@
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vender.HibernateJpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<property name="generateDdl" value="true" />
 				<property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect" />
 			</bean>

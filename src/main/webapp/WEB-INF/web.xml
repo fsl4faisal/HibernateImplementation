@@ -4,7 +4,8 @@
 	version="3.0">
 	
 	<servlet>
-	<servlet-name>org.springframework.web.servlet.DispatcherServlet</servlet-name>
+	<servlet-name>spring</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	<load-on-startup>1</load-on-startup>
 	</servlet>
 	
@@ -19,7 +20,7 @@
 	</servlet-mapping>
 	
 	<listener>
-	<listener-class>org.springframework.web.context.ContextLoaderListner</listener-class>
+	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
 	
