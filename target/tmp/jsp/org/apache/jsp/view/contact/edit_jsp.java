@@ -60,7 +60,7 @@ public final class edit_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<body>\r\n");
       out.write("\t<h1>Edit Contact</h1>\r\n");
       out.write("\t<form action=\"contact\" method=\"post\">\r\n");
-      out.write("\t");
+      out.write("\t\t");
       if (_jspx_meth_c_set_0(_jspx_page_context))
         return;
       out.write("\r\n");
@@ -87,14 +87,14 @@ public final class edit_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${address.zip}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"></li>\r\n");
       out.write("\t\t</ul>\r\n");
-      out.write("\t\t<input type=\"submit\" value=\"edit\" name=\"edit\">\r\n");
-      out.write("\t<a href=\"contacts\">Back to Contacts</a>\r\n");
+      out.write("\t\t<input type=\"submit\" value=\"edit\" name=\"edit\"> <a\r\n");
+      out.write("\t\t\thref=\"contacts\">Back to Contacts</a>\r\n");
       out.write("\t</form>\r\n");
       out.write("\t<form action=\"contact\" method=\"post\">\r\n");
-      out.write("\t<input type=\"hidden\" name=\"id\" value=\"");
+      out.write("\t\t<input type=\"hidden\" name=\"id\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${contact.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\">\r\n");
-      out.write("\t<input type=\"submit\" value=\"delete\" name=\"delete\">\r\n");
+      out.write("\"> <input\r\n");
+      out.write("\t\t\ttype=\"submit\" value=\"delete\" name=\"delete\">\r\n");
       out.write("\t</form>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
