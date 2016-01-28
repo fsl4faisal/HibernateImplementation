@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marakana.contacts.entities.Address;
 import com.marakana.contacts.entities.Contact;
@@ -22,45 +23,27 @@ public class ContactController {
 	@Autowired
 	private ContactRepository contactRepository;
 
-	// public void getContactList(HttpServletRequest request,
-	// HttpServletResponse response) throws IOException, ServletException {
-	//
-	// request.setAttribute("contacts", contactRepository.findAll());
-	//
-	// RequestDispatcher view = request
-	// .getRequestDispatcher("view/contact/list.jsp");
-	// view.forward(request, response);
-	// }
-
 	@RequestMapping(value = "/contacts", method = RequestMethod.GET)
 	public String getContactList(Model model) {
 		model.addAttribute("contacts", contactRepository.findAll());
 		return "contact/list";
 	}
 
+	@RequestMapping(value = "/contact", params = "add", method = RequestMethod.GET)
+	public String getAddContact() {
+		return "contact/add";
+	}
+
+	@RequestMapping(value = "/contact", params = "edit", method = RequestMethod.GET)
+	public String getEditContact(@RequestParam long id, Model model) {
+		model.addAttribute("contact", contactRepository.findOne(id));
+		return "contact/edit";
+	}
+
 	@RequestMapping(value = "/contact", method = RequestMethod.GET)
-	public void getContact(HttpServletRequest request,
-			HttpServletResponse response) throws IOException, ServletException {
-		if (request.getParameter("add") != null) {
-			request.getRequestDispatcher("view/contact/add.jsp").forward(
-					request, response);
-		} else {
-			// /get contact id from request parameter and populate model
-			// with the contact and address objects
-			long id = Long.parseLong(request.getParameter("id"));
-			Contact contact = contactRepository.findOne(id);// TODO
-			request.setAttribute("contact", contact);
-
-			// dispatch either to the edit page or to view page
-			if (request.getParameter("edit") != null) {
-				request.getRequestDispatcher("view/contact/edit.jsp").forward(
-						request, response);
-			} else {
-				request.getRequestDispatcher("view/contact/view.jsp").forward(
-						request, response);
-			}
-		}
-
+	public String getViewContact(@RequestParam long id, Model model) {
+		model.addAttribute("contact", contactRepository.findOne(id));
+		return "contact/view";
 	}
 
 	@RequestMapping(value = "/contact", method = RequestMethod.POST)
