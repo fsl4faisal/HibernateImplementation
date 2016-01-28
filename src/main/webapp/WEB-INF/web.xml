@@ -5,7 +5,7 @@
 	
 	<servlet>
 	<servlet-name>org.springframework.web.servlet.DispatcherServlet</servlet-name>
-	<load-on-startup></load-on-startup>
+	<load-on-startup>1</load-on-startup>
 	</servlet>
 	
 	<servlet-mapping>
