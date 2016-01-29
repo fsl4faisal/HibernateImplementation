@@ -47,7 +47,7 @@ public class ContactController {
 			@RequestParam String city, @RequestParam String state,
 			@RequestParam String zip, @RequestParam String name) {
 		Address address = new Address(street, city, state, zip);
-		Contact contact = new Contact(name, address);
+		Contact contact = null;//new Contact(name, address);
 		contact = contactRepository.save(contact);
 
 		return "redirect:contact?id=" + contact.getId();
@@ -61,13 +61,13 @@ public class ContactController {
 			@RequestParam long id) {
 
 		Contact contact = contactRepository.findOne(id);
-		Address address = contact.getAddress();
+		Address address = null;//contact.getAddress();
 		contact.setName(name);
 		address.setCity(city);
 		address.setState(state);
 		address.setStreet(street);
 		address.setZip(zip);
-		contact.setAddress(address);
+		//contact.setAddress(address);
 		contact = contactRepository.save(contact);
 		System.out.println("details from contactServlet after the update :"
 				+ contact.getName());
