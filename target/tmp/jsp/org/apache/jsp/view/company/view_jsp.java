@@ -1,10 +1,10 @@
-package org.apache.jsp.view.office;
+package org.apache.jsp.view.company;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class edit_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class view_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -45,29 +45,17 @@ public final class edit_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\r\n");
-      out.write("<title>Edit Office</title>\r\n");
+      out.write("<title>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${company.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("\t<h1>Edit Office</h1>\r\n");
-      out.write("\t<form action=\"office\" method=\"post\">\r\n");
-      out.write("\t\t<input type=\"hidden\" name=\"edit\">\r\n");
-      out.write("\t\t<input type=\"hidden\" name=\"id\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${office.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\">\r\n");
-      out.write("\t\t<ul>\r\n");
-      out.write("\t\t\t<li>Name:<input type=\"text\" name=\"name\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${office.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"></li>\r\n");
-      out.write("\t\t</ul>\r\n");
-      out.write("\t\t<input type=\"submit\" value=\"edit\" name=\"edit\"> \r\n");
-      out.write("\t\t<a href=\"contacts\">Back to Contacts</a>\r\n");
-      out.write("\t</form>\r\n");
-      out.write("\t<form action=\"office\" method=\"post\">\r\n");
-      out.write("\t\t<input type=\"hidden\" name=\"id\" value=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${office.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"> <input\r\n");
-      out.write("\t\t\ttype=\"submit\" value=\"delete\" name=\"delete\">\r\n");
-      out.write("\t</form>\r\n");
+      out.write("\t<h1>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${company.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</h1>\r\n");
+      out.write("\t<a href=\"contacts\">Back to Contacts</a>|\t<a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${company.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("&edit\">Edit Company</a>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

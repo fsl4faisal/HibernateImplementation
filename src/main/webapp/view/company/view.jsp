@@ -2,15 +2,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>${contact.name}</title>
+<title>${company.name}</title>
 </head>
 <body>
-	<h1>${contact.name}</h1>
-	<c:set var="address" value="${contact.address}" />
-	<ul>
-		<li>${address.street}</li>
-		<li>${address.city}, ${address.state} ${address.zip}</li>
-	</ul>
-	<a href="contacts">Back to Contacts</a>|	<a href="contact?edit&id=${contact.id}">Edit Contact</a>
+	<h1>${company.name}</h1>
+	<a href="contacts">Back to Contacts</a>|	<a href="${company.url}&edit">Edit Company</a>
 </body>
 </html>

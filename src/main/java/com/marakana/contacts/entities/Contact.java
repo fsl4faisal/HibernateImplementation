@@ -2,18 +2,13 @@ package com.marakana.contacts.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-public class Contact {
+public abstract class Contact extends BaseEntity{
 
-	@Id
-	@GeneratedValue	
-	private long id;
 
 	@Column
 	private String name;
@@ -27,14 +22,6 @@ public class Contact {
 
 	}
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -42,5 +29,7 @@ public class Contact {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public abstract String getUrl();
 
 }

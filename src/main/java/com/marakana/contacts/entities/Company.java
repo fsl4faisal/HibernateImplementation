@@ -10,6 +10,11 @@ public class Company extends Contact {
 
 	@OneToMany
 	private Set<Office> offices;
+	
+	public Company() {
+	}
+	
+	
 
 	public Company(String name, Set<Office> offices) {
 		super(name);
@@ -22,6 +27,11 @@ public class Company extends Contact {
 
 	public void setOffices(Set<Office> offices) {
 		this.offices = offices;
+	}
+
+	@Override
+	public String getUrl() {
+		return "company?id="+getId();
 	}
 
 }
