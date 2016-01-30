@@ -13,3 +13,19 @@ alter table Company_Office add constraint FK7F4320FED485C673 foreign key (Compan
 alter table Office add constraint FK8C9C2ADCD9EB7F13 foreign key (address_id) references Address
 alter table Person add constraint FK8E488775D9EB7F13 foreign key (address_id) references Address
 alter table Person add constraint FK8E48877571C3314 foreign key (id) references Contact
+/*C6*/SET SCHEMA PUBLIC
+INSERT INTO ADDRESS VALUES(1,'trivandrum','Kerala','room number 103,','695011')
+INSERT INTO CONTACT VALUES(1,'faisal raza')
+INSERT INTO PERSON VALUES(1,1)
+COMMIT
+/*C3*/SET SCHEMA PUBLIC
+INSERT INTO ADDRESS VALUES(2,'sdsd','dssdsd','dsds','dsdsd')
+INSERT INTO CONTACT VALUES(2,'sdsdsd')
+INSERT INTO PERSON VALUES(2,2)
+COMMIT
+/*C7*/SET SCHEMA PUBLIC
+DELETE FROM CONTACT WHERE ID=2
+INSERT INTO CONTACT VALUES(2,'sdsdsd 67')
+COMMIT
+/*C4*/INSERT INTO OFFICE VALUES(1,'Cisco',NULL)
+COMMIT

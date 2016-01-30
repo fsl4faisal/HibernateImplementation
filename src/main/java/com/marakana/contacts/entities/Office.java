@@ -18,19 +18,19 @@ public class Office {
 
 	@Column
 	private String name;
+	
+	public Office(){}
+
+	public Office(String name) {
+		super();
+		this.name = name;
+	}
 
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Office(Long id, Address address, String name) {
-		super();
-		this.id = id;
-		this.address = address;
 		this.name = name;
 	}
 

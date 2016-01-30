@@ -14,6 +14,8 @@ public class Person extends Contact {
 		super(name);
 		this.address = address;
 	}
+	
+	public Person(){}
 
 	public Address getAddress() {
 		return address;
