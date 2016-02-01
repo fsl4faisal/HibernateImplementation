@@ -11,3 +11,21 @@ alter table Office add constraint FK8C9C2ADCD485C673 foreign key (company_id) re
 alter table Office add constraint FK8C9C2ADCD9EB7F13 foreign key (address_id) references Address
 alter table Person add constraint FK8E488775D9EB7F13 foreign key (address_id) references Address
 alter table Person add constraint FK8E48877571C3314 foreign key (id) references Contact
+/*C6*/SET SCHEMA PUBLIC
+INSERT INTO CONTACT VALUES(1,'Cisco')
+INSERT INTO COMPANY VALUES(1)
+COMMIT
+/*C3*/SET SCHEMA PUBLIC
+INSERT INTO ADDRESS VALUES(1,'new delgi','delhi','hoho','110078')
+INSERT INTO OFFICE VALUES(1,'Cisco Office #1',1,1)
+COMMIT
+/*C7*/SET SCHEMA PUBLIC
+INSERT INTO ADDRESS VALUES(2,'new delgi','delhi','hoho','110078')
+INSERT INTO OFFICE VALUES(2,'Cisco Office #2',2,1)
+COMMIT
+DELETE FROM CONTACT WHERE ID=1
+INSERT INTO CONTACT VALUES(1,'Cisco new')
+COMMIT
+/*C4*/DELETE FROM OFFICE WHERE ID=1
+DELETE FROM ADDRESS WHERE ID=1
+COMMIT

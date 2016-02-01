@@ -1,5 +1,6 @@
 package com.marakana.contacts.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -8,7 +9,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Office extends UrlEntity{
 
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private Address address;
 
 	@Column
@@ -57,8 +58,6 @@ public class Office extends UrlEntity{
 		this.address = address;
 	}
 
-	public String getUrl(){
-		return getClass().getSimpleName().toLowerCase()+"?id="+getId();
-	}
+	
 	
 }
