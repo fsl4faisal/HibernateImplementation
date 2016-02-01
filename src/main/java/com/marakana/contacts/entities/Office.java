@@ -6,7 +6,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Office extends BaseEntity{
+public class Office extends UrlEntity{
 
 	@OneToOne
 	private Address address;
