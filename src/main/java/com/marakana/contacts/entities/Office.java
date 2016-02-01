@@ -27,9 +27,12 @@ public class Office extends BaseEntity{
 
 	public Office(){}
 
-	public Office(String name) {
+
+	public Office(Address address, String name, Company company) {
 		super();
+		this.address = address;
 		this.name = name;
+		this.company = company;
 	}
 
 	public String getName() {
