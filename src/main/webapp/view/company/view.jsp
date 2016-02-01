@@ -6,6 +6,12 @@
 </head>
 <body>
 	<h1>${company.name}</h1>
-	<a href="contacts">Back to Contacts</a>|	<a href="${company.url}&edit">Edit Company</a>
+	<ul>
+	<c:forEach var="office" items="${company.office}">
+	<li><a href="${office.url}">${office.name}</a></li>
+	</c:forEach>
+	</ul>
+	<a href="contacts">Back to Contacts</a>|
+	<a href="${company.url}&edit">Edit Company</a>
 </body>
 </html>

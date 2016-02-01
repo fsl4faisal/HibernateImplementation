@@ -54,5 +54,8 @@ public class Office extends BaseEntity{
 		this.address = address;
 	}
 
+	public String getUrl(){
+		return getClass().getSimpleName().toLowerCase()+"?id="+getId();
+	}
 	
 }
