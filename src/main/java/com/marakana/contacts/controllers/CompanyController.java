@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marakana.contacts.entities.Company;
 import com.marakana.contacts.repositories.CompanyRepository;
-import com.marakana.contacts.repositories.OfficeRepository;
 
 @Controller
 public class CompanyController {

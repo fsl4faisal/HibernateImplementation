@@ -9,7 +9,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class Company extends Contact {
 	
-	@OneToMany(mappedBy="company",cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="company",cascade=CascadeType.ALL,orphanRemoval=true)
 	private Set<Office> offices;
 
 	public Company() {

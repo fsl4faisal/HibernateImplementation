@@ -20,12 +20,12 @@ public class OfficeController {
 	private OfficeRepository officeRepository;
 
 	@Autowired
-	private CompanyRepository CompanyRepository;
+	private CompanyRepository companyRepository;
 
 	@RequestMapping(value = "/office", params = "add", method = RequestMethod.GET)
 	public String getAddOffice(Model model,
 			@RequestParam("company_id") long companyId) {
-		model.addAttribute("company", CompanyRepository.findOne(companyId));
+		model.addAttribute("company", companyRepository.findOne(companyId));
 		return "office/add";
 	}
 
@@ -46,7 +46,7 @@ public class OfficeController {
 			@RequestParam String street, @RequestParam String city,
 			@RequestParam String state, @RequestParam String zip,
 			@RequestParam String name) {
-		Company company = CompanyRepository.findOne(companyId);
+		Company company = companyRepository.findOne(companyId);
 		Address address = new Address(street, city, state, zip);
 		Office office = new Office(address, name, company);
 		office = officeRepository.save(office);
@@ -78,10 +78,18 @@ public class OfficeController {
 
 	@RequestMapping(value = "/office", params = "delete", method = RequestMethod.POST)
 	public String postDeleteOffice(@RequestParam long id) {
+		/*
+		 * One other method of implementation
+		 * 
+		 * Company company = companyRepository.findOne(id);
+		company.getOffices().remove(officeRepository.findOne(id));
+		companyRepository.save(company);
+		return "redirect:" + company.getUrl();*/
+
 		Office office=officeRepository.findOne(id);
 		officeRepository.delete(office);
 		return "redirect:"+office.getCompany().getUrl();
-
+		
 	}
 
 }
