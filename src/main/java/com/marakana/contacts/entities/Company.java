@@ -2,14 +2,14 @@ package com.marakana.contacts.entities;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Company extends Contact {
 	
-	@OneToMany(mappedBy="company",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="company",cascade=CascadeType.ALL)
 	private Set<Office> offices;
 
 	public Company() {
