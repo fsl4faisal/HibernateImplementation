@@ -1,4 +1,4 @@
-package org.apache.jsp.view.office;
+package org.apache.jsp.view.person;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -56,12 +56,12 @@ public final class view_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<head>\r\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\r\n");
       out.write("<title>");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${office.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\t<h1>");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${office.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</h1>\r\n");
       out.write("\t");
       if (_jspx_meth_c_set_0(_jspx_page_context))
@@ -79,14 +79,16 @@ public final class view_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write(' ');
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${address.zip}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</li>\r\n");
+      out.write("\t\t<li>manager: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.manager.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</li>\r\n");
+      out.write("\t\t<li>employer: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.employer.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</li>\r\n");
       out.write("\t</ul>\r\n");
-      out.write("\t<a href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${office.company.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\">Back to ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${office.company.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("</a>|<a href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${office.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("&edit\">Edit Office</a>\r\n");
+      out.write("\t<a href=\"contacts\">Back to Contacts</a>|\t<a href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("&edit\">Edit Person</a>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -111,7 +113,7 @@ public final class view_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_c_set_0.setPageContext(_jspx_page_context);
     _jspx_th_c_set_0.setParent(null);
     _jspx_th_c_set_0.setVar("address");
-    _jspx_th_c_set_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${office.address}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_set_0.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.address}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_set_0 = _jspx_th_c_set_0.doStartTag();
     if (_jspx_th_c_set_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_set_var_value_nobody.reuse(_jspx_th_c_set_0);
