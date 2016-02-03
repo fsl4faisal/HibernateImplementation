@@ -76,47 +76,51 @@ public final class edit_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_set_0(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t<input type=\"hidden\" name=\"edit\"> <input type=\"hidden\"\r\n");
-      out.write("\t\t\tname=\"id\" value=\"");
+      out.write("\t\t<input type=\"hidden\" name=\"id\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\">\r\n");
       out.write("\t\t<ul>\r\n");
       out.write("\t\t\t<li>Name:<input type=\"text\" name=\"name\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"></li>\r\n");
-      out.write("\t\t\t<li>Street:<input type=\"text\" name=\"street\"\r\n");
-      out.write("\t\t\t\tvalue=\"");
+      out.write("\t\t\t<li>Street:<input type=\"text\" name=\"street\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${address.street}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"></li>\r\n");
       out.write("\t\t\t<li>City:<input type=\"text\" name=\"city\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${address.city}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"></li>\r\n");
-      out.write("\t\t\t<li>State:<input type=\"text\" name=\"state\"\r\n");
-      out.write("\t\t\t\tvalue=\"");
+      out.write("\t\t\t<li>State:<input type=\"text\" name=\"state\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${address.state}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"></li>\r\n");
       out.write("\t\t\t<li>Zip:<input type=\"text\" name=\"zip\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${address.zip}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"></li>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("\t\t\t<li>manager: <select name=\"manager_id\">\r\n");
       out.write("\t\t\t\t\t<option value=\"0\">(none)</option>\r\n");
       out.write("\t\t\t\t\t");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t\t</select></li>\r\n");
-      out.write("\t\t\t<li>employer: <select name=\"employer_id\">\r\n");
+      out.write("\t\t\t</select>\r\n");
+      out.write("\t\t\t</li>\r\n");
+      out.write("\r\n");
+      out.write("\t\t\t<li>employer: <select name=\"employer_id\" >\r\n");
       out.write("\t\t\t\t\t<option value=\"0\">(none)</option>\r\n");
       out.write("\t\t\t\t\t");
       if (_jspx_meth_c_forEach_1(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t\t</select></li>\r\n");
+      out.write("\t\t\t</select>\r\n");
+      out.write("\t\t\t</li>\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("\t\t</ul>\r\n");
-      out.write("\t\t<input type=\"submit\" value=\"edit\" name=\"edit\"> <a\r\n");
-      out.write("\t\t\thref=\"contacts\">Back to Contacts</a>\r\n");
+      out.write("\t\t<input type=\"submit\" value=\"edit\" name=\"edit\">\r\n");
       out.write("\t</form>\r\n");
+      out.write("\t<a href=\"contacts\">Back to Contacts</a>\r\n");
+      out.write("\r\n");
       out.write("\t<form action=\"person\" method=\"post\">\r\n");
       out.write("\t\t<input type=\"hidden\" name=\"id\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -177,12 +181,6 @@ public final class edit_jsp extends org.apache.jasper.runtime.HttpJspBase
           if (_jspx_meth_c_choose_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
           out.write("\r\n");
-          out.write("\t\t\t\t\t\t<option value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${manager.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write('"');
-          out.write('>');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${manager.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</option>\r\n");
           out.write("\t\t\t\t\t");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -245,7 +243,7 @@ public final class edit_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_0 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
     _jspx_th_c_when_0.setPageContext(_jspx_page_context);
     _jspx_th_c_when_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-    _jspx_th_c_when_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${manager == person.manager}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_when_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${manager} == ${person.manager}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_when_0 = _jspx_th_c_when_0.doStartTag();
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
@@ -321,12 +319,6 @@ public final class edit_jsp extends org.apache.jasper.runtime.HttpJspBase
           if (_jspx_meth_c_choose_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
             return true;
           out.write("\r\n");
-          out.write("\t\t\t\t\t\t<option value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employer.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write('"');
-          out.write('>');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employer.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</option>\r\n");
           out.write("\t\t\t\t\t");
           int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -389,7 +381,7 @@ public final class edit_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_1 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
     _jspx_th_c_when_1.setPageContext(_jspx_page_context);
     _jspx_th_c_when_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_1);
-    _jspx_th_c_when_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employer == person.employer}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_when_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${employer} == ${person.employer}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_when_1 = _jspx_th_c_when_1.doStartTag();
     if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {

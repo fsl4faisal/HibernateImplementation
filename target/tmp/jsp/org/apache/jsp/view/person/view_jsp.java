@@ -74,7 +74,6 @@ public final class view_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<li>");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${address.city}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(',');
-      out.write(' ');
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${address.state}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(' ');
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${address.zip}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -86,7 +85,8 @@ public final class view_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.employer.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</li>\r\n");
       out.write("\t</ul>\r\n");
-      out.write("\t<a href=\"contacts\">Back to Contacts</a>|\t<a href=\"");
+      out.write("\t<a href=\"contacts\">Back to Contacts</a>|\r\n");
+      out.write("\t<a href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${person.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("&edit\">Edit Person</a>\r\n");
       out.write("</body>\r\n");

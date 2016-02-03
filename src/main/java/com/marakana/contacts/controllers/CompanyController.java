@@ -41,6 +41,7 @@ public class CompanyController {
 
 		Company company = new Company(name,null);
 		company = companyRepository.save(company);
+		System.out.println("inside postAddCompany(findAll)" +companyRepository.findAll());
 
 		return "redirect:company?id=" + company.getId();
 
