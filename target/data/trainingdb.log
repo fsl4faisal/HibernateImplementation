@@ -11,12 +11,15 @@ alter table Office add constraint FK8C9C2ADCD485C673 foreign key (company_id) re
 alter table Office add constraint FK8C9C2ADCD9EB7F13 foreign key (address_id) references Address
 alter table Person add constraint FK8E488775D9EB7F13 foreign key (address_id) references Address
 alter table Person add constraint FK8E48877571C3314 foreign key (id) references Contact
-/*C8*/SET SCHEMA PUBLIC
-INSERT INTO ADDRESS VALUES(1,0,'','','','')
-INSERT INTO CONTACT VALUES(1,0,'')
-INSERT INTO PERSON VALUES(1,1)
+/*C6*/SET SCHEMA PUBLIC
+INSERT INTO CONTACT VALUES(1,0,'d')
+INSERT INTO COMPANY VALUES(1)
 COMMIT
-/*C5*/SET SCHEMA PUBLIC
-INSERT INTO CONTACT VALUES(2,0,'')
-INSERT INTO COMPANY VALUES(2)
+/*C8*/SET SCHEMA PUBLIC
+INSERT INTO ADDRESS VALUES(2,0,'d','d','d','d')
+INSERT INTO OFFICE VALUES(1,0,'d',2,1)
+COMMIT
+/*C7*/SET SCHEMA PUBLIC
+DELETE FROM CONTACT WHERE ID=1
+INSERT INTO CONTACT VALUES(1,1,'sa')
 COMMIT
